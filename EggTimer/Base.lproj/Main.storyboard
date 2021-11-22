@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,6 +122,20 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="571.5" width="374" height="246.5"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="CHa-mi-1QU">
+                                                <rect key="frame" x="0.0" y="123.5" width="374" height="2.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="kUo-rO-sBf"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemOrangeColor"/>
+                                                <color key="trackTintColor" systemColor="systemGray2Color"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CHa-mi-1QU" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="ODb-VL-42x"/>
+                                            <constraint firstAttribute="trailing" secondItem="CHa-mi-1QU" secondAttribute="trailing" id="xjO-n4-k9P"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -134,6 +149,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wI6-ag-afn" secondAttribute="trailing" id="dky-ZA-Z3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="CHa-mi-1QU" id="zi6-fb-DAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,5 +162,11 @@
         <image name="hard_egg" width="287.5" height="366"/>
         <image name="medium_egg" width="288" height="363"/>
         <image name="soft_egg" width="287" height="365"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
